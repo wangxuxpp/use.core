@@ -36,7 +36,7 @@ public class BaseInfo {
 	
 	public static Object getInfo()
 	{
-		System.out.println("123");
+
 		Random rd = new Random(); 
         int x = rd.nextInt(3)+1;
         if(x != 1)
