@@ -28,11 +28,13 @@ public class BaseInfo {
 	//WMES
 	//private static final byte [] sysCode = new byte [] {87, 77, 69, 83} ;
 	//WMESSQ【字符串转字节】
-	private static final byte [] sysCode = new byte [] {87, 77, 69, 83, 83, 81} ;
+	//private static final byte [] sysCode = new byte [] {87, 77, 69, 83, 83, 81} ;
+	//SIXPOOL
+	private static final byte [] sysCode = new byte []{83, 73, 88, 80, 79, 79, 76};
 	/**
 	 * 是否验证日期
 	 */
-	private static final boolean checkDate = true;
+	private static final boolean checkDate = false;
 	
 	public static Object getInfo()
 	{
