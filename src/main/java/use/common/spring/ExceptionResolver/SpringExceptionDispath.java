@@ -33,7 +33,10 @@ public class SpringExceptionDispath extends SpringExceptionAbstract implements H
 	    response.setHeader("Prama", "no-cache"); 
 		if(isAjax(request))
 		{
-			return ajaxException(request , response , handle , er);
+			try
+			{
+				return ajaxException(request , response , handle , er);
+			}catch(Exception e) {return new ModelAndView();}
 		} else {
 			return htmlException(request , response , handle , er);
 		}
@@ -73,15 +76,14 @@ public class SpringExceptionDispath extends SpringExceptionAbstract implements H
 	 */
 	private ModelAndView ajaxException(HttpServletRequest request, HttpServletResponse response, Object handle, Exception er)
 	{
-		ModelAndView r = new ModelAndView();
+		
+		ExceptionUtil.throwError(er,log);
 		
 		JSONResult json = new JSONResult();
 		json.setJsonType("error");
 		json.setJsonMessage(er.getMessage());
 		json.write(response);
-		
-		ExceptionUtil.throwError(er,log);
-		
+		ModelAndView r = new ModelAndView();
 		r.clear();
 		return r;
 	}
