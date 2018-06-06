@@ -20,7 +20,7 @@ public class BaseInfo {
 	//private static final byte [] sysCode = new byte [] {69, 78, 86, 73, 82} ; 
 	
 	//BSS
-	//private static final byte [] sysCode = new byte [] {66, 83, 83} ; 
+	private static final byte [] sysCode = new byte [] {66, 83, 83} ; 
 	
 	//EnvirAN
     //private static final byte [] sysCode = new byte [] {69, 78, 86, 73, 82, 65, 78} ;		
@@ -30,7 +30,7 @@ public class BaseInfo {
 	//WMESSQ【字符串转字节】
 	//private static final byte [] sysCode = new byte [] {87, 77, 69, 83, 83, 81} ;
 	//SIXPOOL
-	private static final byte [] sysCode = new byte []{83, 73, 88, 80, 79, 79, 76};
+	//private static final byte [] sysCode = new byte []{83, 73, 88, 80, 79, 79, 76};
 	/**
 	 * 是否验证日期
 	 */
