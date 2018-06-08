@@ -4,6 +4,7 @@ E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\security\BaseInf
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\util\file\upAndDown\fileDownLoad\FileDownLoad.java
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\security\IbaseClass.java
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\spring\util\SpringContextUtils.java
+E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\util\single\ISingleCreateObject.java
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\util\file\upAndDown\fileDownLoad\IFileDownLoad.java
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\shiro\SysWebSessionManagement.java
 E:\javaWorkSpace\noListnerJar\use.core\src\main\java\use\common\Eventloop\IEventLoopHandle.java
