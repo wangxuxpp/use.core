@@ -4,8 +4,6 @@ import java.util.Map;
 
 import javax.servlet.ServletRequest;
 
-import use.common.util.single.ISingleCreateObject;
-
 /**
  * 
  * 项目名称:ctc
@@ -26,19 +24,6 @@ public class Util {
     {
     	return requestMap.get(key) == null ? null : requestMap.get(key).toString().trim();
     }
-    public static <T>T singleCreate(T obj , Class<T> cal , ISingleCreateObject<T> backClass)
-    {
-    	if(obj == null)
-    	{
-    		synchronized(cal)
-    		{
-    			if(obj == null)
-    			{
-    				obj = backClass.createObject();
-    			}
-    		}
-    	}
-    	return obj;
-    }
+
 
 }
