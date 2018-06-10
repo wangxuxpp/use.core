@@ -12,6 +12,7 @@ import org.apache.shiro.web.filter.authc.UserFilter;
 import use.common.json.JSONResult;
 import use.common.util.Util;
 
+@Deprecated
 public class UserExtendFilter extends UserFilter {
 
 	private final String ajaxHeadKey = "X-Requested-With";

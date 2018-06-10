@@ -14,6 +14,7 @@ import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.apache.shiro.web.util.WebUtils;
 
+@Deprecated
 public class SysWebSessionManagement extends DefaultWebSessionManager{
 
 	public static String cookeKey = "JSESSIONID";
