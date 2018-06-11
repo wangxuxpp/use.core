@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
+import use.common.exception.JsonException;
 import use.common.json.JSONResult;
 import use.common.util.ExceptionUtil;
 
@@ -22,6 +24,7 @@ import use.common.util.ExceptionUtil;
  * 创建时间:2018年5月11日
  * @version:
  */
+@SuppressWarnings("unchecked")
 public class SpringExceptionDispath extends SpringExceptionAbstract implements HandlerExceptionResolver{
 
 	protected final Logger log = LoggerFactory.getLogger(SpringExceptionDispath.class);
@@ -31,12 +34,18 @@ public class SpringExceptionDispath extends SpringExceptionAbstract implements H
 		response.setDateHeader("Expires", 0);  
 		response.setHeader("Cache-Control", "no-cache");
 	    response.setHeader("Prama", "no-cache"); 
+	    if(er instanceof JsonException)
+	    {
+	    	JsonException err = (JsonException)er;
+	    	if(err.getJson() != null)
+	    	{
+	    		ExceptionUtil.throwError(er,log);
+	    		return new ModelAndView(new MappingJackson2JsonView() , err.getJson());
+	    	}
+	    }
 		if(isAjax(request))
 		{
-			try
-			{
-				return ajaxException(request , response , handle , er);
-			}catch(Exception e) {return new ModelAndView();}
+			return ajaxException(request , response , handle , er);
 		} else {
 			return htmlException(request , response , handle , er);
 		}
@@ -74,6 +83,7 @@ public class SpringExceptionDispath extends SpringExceptionAbstract implements H
 	 * @param er
 	 * @return
 	 */
+	
 	private ModelAndView ajaxException(HttpServletRequest request, HttpServletResponse response, Object handle, Exception er)
 	{
 		
@@ -82,9 +92,7 @@ public class SpringExceptionDispath extends SpringExceptionAbstract implements H
 		JSONResult json = new JSONResult();
 		json.setJsonType("error");
 		json.setJsonMessage(er.getMessage());
-		json.write(response);
-		ModelAndView r = new ModelAndView();
-		r.clear();
+		ModelAndView r = new ModelAndView(new MappingJackson2JsonView() , json);
 		return r;
 	}
 

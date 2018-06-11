@@ -29,7 +29,7 @@ public class ExceptionUtil {
 			System.out.println(erInfo);
 		}
 		
-		er.printStackTrace();
+		//er.printStackTrace();
     }
     /**
      * 异常处理
