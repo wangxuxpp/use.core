@@ -34,5 +34,9 @@ public class JsonException extends RuntimeException{
 		this.json = json;
 	}
 	
+	public static void threw(Throwable cause , JSONResult v)
+	{
+		throw new JsonException(cause , v);
+	}
 	
 }
