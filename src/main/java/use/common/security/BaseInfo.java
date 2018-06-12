@@ -23,10 +23,10 @@ public class BaseInfo {
 	//private static final byte [] sysCode = new byte [] {66, 83, 83} ; 
 	
 	//EnvirAN
-    //private static final byte [] sysCode = new byte [] {69, 78, 86, 73, 82, 65, 78} ;		
+    private static final byte [] sysCode = new byte [] {69, 78, 86, 73, 82, 65, 78} ;		
 	
 	//WMES
-	private static final byte [] sysCode = new byte [] {87, 77, 69, 83} ;
+	//private static final byte [] sysCode = new byte [] {87, 77, 69, 83} ;
 	//WMESSQ【字符串转字节】
 	//private static final byte [] sysCode = new byte [] {87, 77, 69, 83, 83, 81} ;
 	//SIXPOOL
